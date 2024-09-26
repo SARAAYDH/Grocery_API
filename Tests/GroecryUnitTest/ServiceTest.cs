@@ -1,10 +1,9 @@
+namespace GroecryAPITest;
 using Grocery.Data;
 using Grocery.Data.Models;
 using Grocery.Service;
 using Grocery.Service.DTO;
 using Moq;
-namespace GroecryAPITest;
-
 public class ServiceTest
 {
     [Fact]

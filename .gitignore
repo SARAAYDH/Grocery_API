@@ -10,15 +10,14 @@
 *.user
 *.userosscache
 *.sln.docstates
-/GroceryAPI/appsettings.json
-/GroceryAPI/appsettings.Development.json
+appsettings.json
+appsettings.Development.json
 *.vsconfig
-.editorconfig
-/Grocery.Data/Migrations/
+/Migrations/
 # Build results
 /bin/
 /obj/
-
+/.vs/
 # NuGet packages
 /packages/
 

@@ -155,5 +155,3 @@ C:\github\GroceryAPI\GroceryAPI\bin\Debug\net7.0\Grocery.Service.dll
 C:\github\GroceryAPI\GroceryAPI\bin\Debug\net7.0\Grocery.Service.pdb
 C:\github\GroceryAPI\GroceryAPI\bin\Debug\net7.0\Grocery.Data.dll
 C:\github\GroceryAPI\GroceryAPI\bin\Debug\net7.0\Grocery.Data.pdb
-C:\github\GroceryAPI\GroceryAPI\bin\Debug\net7.0\Serilog.dll
-C:\github\GroceryAPI\GroceryAPI\bin\Debug\net7.0\Serilog.Sinks.File.dll
