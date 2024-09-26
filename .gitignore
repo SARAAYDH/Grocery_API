@@ -18,7 +18,9 @@ appsettings.Development.json
 /bin/
 /obj/
 /.vs/
+..GroceryAPI/obj
 # NuGet packages
+
 /packages/
 
 # User-specific files (MonoDevelop/Xamarin Studio)
