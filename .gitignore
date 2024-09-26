@@ -17,7 +17,7 @@ appsettings.Development.json
 # Build results
 /bin/
 /obj/
-/.vs/
+.vs/
 ..GroceryAPI/obj
 # NuGet packages
 
