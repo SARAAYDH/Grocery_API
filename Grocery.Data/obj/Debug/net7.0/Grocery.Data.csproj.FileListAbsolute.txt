@@ -1,0 +1,15 @@
+C:\github\GroceryAPI\Grocery.Data\bin\Debug\net7.0\Grocery.Data.deps.json
+C:\github\GroceryAPI\Grocery.Data\bin\Debug\net7.0\Grocery.Data.runtimeconfig.json
+C:\github\GroceryAPI\Grocery.Data\bin\Debug\net7.0\Grocery.Data.dll
+C:\github\GroceryAPI\Grocery.Data\bin\Debug\net7.0\Grocery.Data.pdb
+C:\github\GroceryAPI\Grocery.Data\obj\Debug\net7.0\Grocery.Data.csproj.AssemblyReference.cache
+C:\github\GroceryAPI\Grocery.Data\obj\Debug\net7.0\Grocery.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\github\GroceryAPI\Grocery.Data\obj\Debug\net7.0\Grocery.Data.AssemblyInfoInputs.cache
+C:\github\GroceryAPI\Grocery.Data\obj\Debug\net7.0\Grocery.Data.AssemblyInfo.cs
+C:\github\GroceryAPI\Grocery.Data\obj\Debug\net7.0\Grocery.Data.csproj.CoreCompileInputs.cache
+C:\github\GroceryAPI\Grocery.Data\obj\Debug\net7.0\Grocery.Data.sourcelink.json
+C:\github\GroceryAPI\Grocery.Data\obj\Debug\net7.0\Grocery.Data.dll
+C:\github\GroceryAPI\Grocery.Data\obj\Debug\net7.0\refint\Grocery.Data.dll
+C:\github\GroceryAPI\Grocery.Data\obj\Debug\net7.0\Grocery.Data.pdb
+C:\github\GroceryAPI\Grocery.Data\obj\Debug\net7.0\Grocery.Data.genruntimeconfig.cache
+C:\github\GroceryAPI\Grocery.Data\obj\Debug\net7.0\ref\Grocery.Data.dll
