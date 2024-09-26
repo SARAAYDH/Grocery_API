@@ -144,9 +144,14 @@ C:\github\GroceryAPI\GroceryAPI\obj\Debug\net7.0\staticwebassets.pack.json
 C:\github\GroceryAPI\GroceryAPI\obj\Debug\net7.0\staticwebassets.build.json
 C:\github\GroceryAPI\GroceryAPI\obj\Debug\net7.0\staticwebassets.development.json
 C:\github\GroceryAPI\GroceryAPI\obj\Debug\net7.0\scopedcss\bundle\GroceryAPI.styles.css
-C:\github\GroceryAPI\GroceryAPI\obj\Debug\net7.0\GroceryAPI.csproj.CopyComplete
 C:\github\GroceryAPI\GroceryAPI\obj\Debug\net7.0\GroceryAPI.dll
 C:\github\GroceryAPI\GroceryAPI\obj\Debug\net7.0\refint\GroceryAPI.dll
 C:\github\GroceryAPI\GroceryAPI\obj\Debug\net7.0\GroceryAPI.pdb
 C:\github\GroceryAPI\GroceryAPI\obj\Debug\net7.0\GroceryAPI.genruntimeconfig.cache
 C:\github\GroceryAPI\GroceryAPI\obj\Debug\net7.0\ref\GroceryAPI.dll
+C:\github\GroceryAPI\GroceryAPI\obj\Debug\net7.0\GroceryAPI.sourcelink.json
+C:\github\GroceryAPI\GroceryAPI\obj\Debug\net7.0\GroceryAPI.csproj.Up2Date
+C:\github\GroceryAPI\GroceryAPI\bin\Debug\net7.0\Grocery.Service.dll
+C:\github\GroceryAPI\GroceryAPI\bin\Debug\net7.0\Grocery.Service.pdb
+C:\github\GroceryAPI\GroceryAPI\bin\Debug\net7.0\Grocery.Data.dll
+C:\github\GroceryAPI\GroceryAPI\bin\Debug\net7.0\Grocery.Data.pdb

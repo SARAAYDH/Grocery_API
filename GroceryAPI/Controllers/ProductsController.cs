@@ -1,93 +1,87 @@
-﻿using GroceryAPI.Data;
-using GroceryAPI.Model;
-using Microsoft.AspNetCore.Http;
+﻿using Grocery.Service;
+using Grocery.Service.DTO;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+namespace GroceryAPI.Controllers;
 
-namespace GroceryAPI.Controllers
+[Route("api/[controller]")]
+[ApiController]
+public class ProductsController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class ProductsController : ControllerBase
+    private readonly IGroceryService _service;
+
+    public ProductsController(IGroceryService service)
     {
-        private GroceryContext _context;
-        public ProductsController(GroceryContext context)
+        _service = service;
+    }
+
+    [HttpGet]
+    public async Task<List<RequestedProduct>> GetAllProudct()
+    {
+        var productsList = await _service.GetAllAsync(CancellationToken.None);
+        return productsList ?? new List<RequestedProduct>();
+    }
+
+    [HttpGet("{id}")]
+    public async Task<ActionResult<RequestedProduct>> GetProudct(int Id)
+    {
+        var product = await _service.GetByIdAsync(Id, CancellationToken.None);
+        if (product == null)
         {
-            _context = context;
-
+            return NotFound("No product found with this Id");
         }
-        [HttpGet]
-        public async Task<IEnumerable<Product>> GetAllProudct()
+
+        return Ok(product);
+    }
+
+    [HttpPut("{id}")]
+    public async Task<ActionResult> EditProduct(int id, [FromBody] RequestedProduct product, CancellationToken cancellationToken)
+    {
+       if (!ModelState.IsValid)
         {
-            return await _context.Products.ToArrayAsync();
-
+            return BadRequest(ModelState);
         }
-        [HttpPut("{id}")]
-        public async Task<ActionResult> EditProduct(int id, [FromBody] Product product)
+
+       var existingProduct = await _service.GetByIdAsync(id, cancellationToken);
+       if (existingProduct == null)
         {
-            if (id != product.Id)
-            {
-                return BadRequest();
-
-            }
-            else if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(product);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!_context.Products.Any(i => i.Id == id)) { return NotFound(); }
-                    else { throw; }
-                }
-            }
-            return NoContent();
+            return NotFound($"Product with ID {product.Id} not found.");
         }
-        [HttpPost]
-        public async Task<ActionResult> PostProduct(Product product)
+
+       var productToEdit = new EditProduct
         {
-            if (ModelState.IsValid) {
+            Id = product.Id,
+            Name = product.Name,
+            IsAvailable = product.IsAvailable,
+            Price = product.Price,
+            CategoryId = product.CategoryId,
+        };
+       await _service.EditAsync(productToEdit, cancellationToken);
 
-                _context.Add(product);
-               await _context.SaveChangesAsync();
-                return CreatedAtAction(nameof(GetAllProudct), new {id =product.Id},product);
-            }
-            else
-            {
-                return BadRequest();
-            }
+       return Ok();
+    }
 
-        }
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> DeleteProduct(int id)
+    [HttpPost]
+    public async Task<ActionResult> CreateProduct(CreatProductDto product, CancellationToken cancellationToken)
+    {
+        if (!ModelState.IsValid || product == null)
         {
-            var product= _context.Products.First(p => p.Id == id);
-            if (product==null)
-            {
-                return NotFound();
-
-            }
-            else
-            {
-                try
-                {
-              
-                    _context.Products.Remove(product);
-                    await _context.SaveChangesAsync();
-
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!_context.Products.Any(i => i.Id == id)) { return NotFound(); }
-
-                    else { throw; }
-                }
-            }
-            return NoContent();
-
-
+            return BadRequest(product == null ? "Product data is required." : ModelState);
         }
+
+        await _service.AddProductAsync(product, cancellationToken);
+        return CreatedAtAction(nameof(GetAllProudct), product);
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<ActionResult> DeleteProduct(int id, CancellationToken cancellationToken)
+    {
+        var product = await _service.GetByIdAsync(id, cancellationToken);
+        if (product == null)
+        {
+            return NotFound($"Product with Id {id} not found.");
+        }
+
+        await _service.DeleteAsync(id, cancellationToken);
+        return Ok();
     }
 }
