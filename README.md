@@ -1,7 +1,7 @@
 # GroceryAPI
 ## Description
 
-Easily stay on top of your groceries—add, edit, view, or remove items with simplicity. 
+Easily manage grocery products: add, edit, view, or remove items with simplicity.
 
 ### Screenshots
 #### 1. Get All Products Success - Response
